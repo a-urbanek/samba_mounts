@@ -58,7 +58,7 @@ add_to_fstab() {
     local grp="$5"
 
     for mount_name in "${MOUNTS[@]}"; do
-        local entry="//${smb_server_ip}/$mount_name $mount_path$mount_name cifs credentials=$cred_path,uid=$usr,gid=$grp 0 0"
+        local entry="//${smb_server_ip}/$mount_name $mount_path$mount_name cifs credentials=$cred_path,uid=$usr,gid=$grp,noauto,x-systemd.automount 0 0"
         if ! grep -q "$entry" /etc/fstab; then
             echo "$entry" | sudo tee -a /etc/fstab > /dev/null
             echo "Added entry to /etc/fstab: $entry"
