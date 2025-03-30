@@ -3,7 +3,7 @@
 # Variables
 MOUNT_PATH="/mnt/share/"
 CRED_PATH="$HOME/.smbcredentials"
-MOUNTS=("test" "backup" "documents" "fotos" "res" "uni" "projects" "archive" "games")
+MOUNTS=("test" "backup" "documents" "fotos" "res" "uni" "projects" "archive" "games" "proxmox") 
 
 # Get current user's UID and GID
 USR=$(id -u)
